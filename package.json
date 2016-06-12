@@ -1,6 +1,10 @@
 {
   "scripts": {
-    "bundle": "browserify index.js > bundle.js"
+    "bundle": "browserify index.js > bundle.js",
+    "bundle-with-react-cdn": "browserify -x react -t browserify-shim index.js > bundle.js"
+  },
+  "browserify-shim": {
+    "react": "global:React"
   },
   "dependencies": {
     "react": "^15.1.0",
@@ -8,6 +12,7 @@
     "react-month-picker": "github:nickeljew/react-month-picker"
   },
   "devDependencies": {
-    "browserify": "^13.0.1"
+    "browserify": "^13.0.1",
+    "browserify-shim": "^3.8.12"
   }
 }
